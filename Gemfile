@@ -28,3 +28,6 @@ group :development, :test do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+
+# Added at 2018-06-11 14:56:19 +0200 by vtm:
+gem "devise", "~> 4.4"
