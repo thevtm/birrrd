@@ -1,2 +1,25 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <div>Birds to hire</div>
+  <div class="row">
+    <% @birds.each do |bird| %>
+    <div class="col-xs-12 col-sm-3 col-md-3">
+      <div class="bird-card" role="img" aria-label="The Cozy Palace" style="width: 100%; height: 100%; background-image: url('https://images.fineartamerica.com/images-medium-large-5/red-lored-amazon-parrot-teresa-zieba.jpg');"></div>
+      <%#= cl_image_tag bird.photo %> <!-- add this once each bird has a picture -->
+      <%= bird.name %>
+
+    </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
