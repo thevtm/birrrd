@@ -1,23 +1,30 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png", height: 50 %>
+    <%= image_tag "pirate_logo.png", height: 50 %>
   <% end %>
+  <form action="/birds" method="get" class="nav-form">
+    <input type="text" name="search">
+    <input type="submit" value="search">
+  </form>
 
   <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
-
+  <div class="navbar-wagon-right ">
+<!-- add hidden-xs and hidden-sm -->
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "My birds", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Rent bird", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Post bird", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <%= image_tag "https://www.popularpatch.com/blog/wp-content/uploads/2013/07/xJackSparrowQuote-543x400.jpg.pagespeed.ic.StHH-EIbTj.webp", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+
+          <%#= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %> <!--  -> replace with this when user photos are available. -->
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to "#" do %>
@@ -44,7 +51,7 @@
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
+  <!-- <div class="navbar-wagon-item hidden-md hidden-lg">
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
@@ -53,6 +60,6 @@
         <li><a href="#">Other one</a></li>
       </ul>
     </div>
-  </div>
+  </div> -->
 </div>
 
