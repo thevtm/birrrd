@@ -6,9 +6,31 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user_guy = User.create!(name: "Guy", email: "guy@gmail.com", password: "111111", password_confirmation: "111111")
-user_rob = User.create!(name: "Rob", email: "groy@gmail.com", password: "222222", password_confirmation: "222222")
+20.times do
+  User.create!(
+    name: Faker::Name.name,
+    email: Faker::Internet.email,
+    password: "111111",
+    password_confirmation: "111111"
+  )
+end
 
-bird_birdy = Bird.create!(user: user_guy, name: "Birdy", location: "Moscow", price: 10)
+30.times do
+  Bird.create!(
+    user: User.all.sample,
+    name: Faker::Dog.name,
+    location: Faker::StarWars.planet,
+    price: Faker::Number.between(1, 100)
+  )
+end
 
-Rental.create!(user: user_rob, bird: bird_birdy, start_date: Date.new(2010, 1, 1), end_date: Date.new(2010, 2, 1), status: 0)
+80.times do
+  Rental.create!(
+    user: User.all.sample,
+    bird: Bird.all.sample,
+    start_date: Date.new(2010, 1, 1),
+    end_date: Date.new(2010, 2, 1),
+    status: 0
+  )
+end
+

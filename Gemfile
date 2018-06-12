@@ -31,3 +31,6 @@ end
 
 # Added at 2018-06-11 14:56:19 +0200 by vtm:
 gem "devise", "~> 4.4"
+
+# Added at 2018-06-12 11:34:25 +0200 by David:
+gem "faker", "~> 1.8"
