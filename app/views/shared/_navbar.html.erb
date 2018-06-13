@@ -3,10 +3,12 @@
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "pirate_logo.png", height: 50 %>
   <% end %>
+  <div class="">
   <form action="/birds" method="get" class="nav-form">
     <input type="text" name="search">
     <input type="submit" value="search">
   </form>
+  </div>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right ">
@@ -45,9 +47,14 @@
         </div>
       </div>
     <% else %>
+      <%= link_to "Explore birds", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Sign up", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <!-- Login link (when logged out) -->
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+
     <% end %>
+
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
