@@ -1,0 +1,37 @@
+<!-- <h1>You can see the index of all our birds!!</h1>
+
+<h2>Geocode should be on the right side</h2> -->
+
+
+
+<!--
+link_to(body, url, html_options = {})
+link_to -->
+
+
+
+
+<div class="container">
+  <div class="row">
+    <% @birds.each do |bird| %>
+    <div class="col-xs-12 col-sm-4 col-md-4">
+      <%= link_to bird_path(bird) do %>
+      <div class="bird-card">
+        <div class="card-image" role="img" aria-label="Parrot for a pirate" style="background-image: url('https://images.fineartamerica.com/images-medium-large-5/red-lored-amazon-parrot-teresa-zieba.jpg');">
+          <%#= cl_image_tag bird.photo %> <!-- add this once each bird has a picture -->
+        </div>
+        <div class="card-description">
+          <div class="bird-name">
+            <h2><%= bird.name %></h2>
+          </div>
+          <div class="bird-info">
+            <p>Price of $<%= bird.price %></p>
+            <p>Location: <%= bird.location %></p>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+</div>
