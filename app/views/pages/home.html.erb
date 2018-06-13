@@ -1,18 +1,60 @@
+
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://xinature.com/wp-content/uploads/2017/01/sunsets-bay-sail-ship-sea-sky-boat-water-birds-sunset-inlet-ocean-clouds-sound-reflection-sailing-sun-beach-wallpaper-iphone.jpg');">
+  <div class="banner-content">
+    <h1>World's best bird portal</h1>
+    <p>A bird is a pirate's best mate</p>
+
+    <%= link_to birds_path, class: "btn btn-primary btn-md" do %>
+    <div> Gimme da birrrds! </div>
+    <% end %>
+  </div>
+</div>
+
 <div class="container">
-  <div>Birds to hire</div>
   <div class="row">
     <% @birds.each do |bird| %>
-    <div class="col-xs-12 col-sm-3 col-md-3">
-      <div class="bird-card" role="img" aria-label="The Cozy Palace" style="width: 100%; height: 100%; background-image: url('https://images.fineartamerica.com/images-medium-large-5/red-lored-amazon-parrot-teresa-zieba.jpg');"></div>
-      <%#= cl_image_tag bird.photo %> <!-- add this once each bird has a picture -->
-      <%= bird.name %>
-
+    <div class="col-xs-12 col-sm-4 col-md-4">
+      <%= link_to bird_path(bird) do %>
+      <div class="bird-card">
+        <div class="card-image" role="img" aria-label="Parrot for a pirate" style="background-image: url('https://images.fineartamerica.com/images-medium-large-5/red-lored-amazon-parrot-teresa-zieba.jpg');">
+          <%#= cl_image_tag bird.photo %> <!-- add this once each bird has a picture -->
+        </div>
+        <div class="card-description">
+          <div class="bird-name">
+            <h2><%= bird.name %></h2>
+          </div>
+          <div class="bird-info">
+            <p>Price of $<%= bird.price %></p>
+            <p>Location: <%= bird.location %></p>
+          </div>
+        </div>
+      </div>
+      <% end %>
     </div>
     <% end %>
   </div>
 </div>
 
 
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+  <div class="card-category">Popular</div>
+  <div class="card-description">
+    <h2>Le Wagon Shanghai</h2>
+    <p>Very cool city, the best</p>
+  </div>
+  <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+  <a class="card-link" href="#" ></a>
+</div> -->
 
 
 
