@@ -11,7 +11,7 @@
           <% if @bird.user == current_user %>
            <%= link_to "Edit #{@bird.name}", edit_bird_path, class: "button follow" %>
            <% else %>
-           <%= link_to "Rent #{@bird.name}", "#", class: "button follow" %>
+           <%= link_to "Rent #{@bird.name}", new_bird_rental_path(@bird), class: "button follow" %>
            <!-- Add NEW RENTALS PATH -->
         <% end  %>
 
@@ -21,7 +21,7 @@
             Blackbeard
           </a>
         </strong>
-          <span>8 mins ago &middot; @bird.location</span>
+          <span>8 mins ago &middot; <%= @bird.location %> </span>
         </p>
       </header>
       <h2>
