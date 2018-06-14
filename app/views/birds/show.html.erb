@@ -8,9 +8,13 @@
     <div class="flex-content">
       <header>
         <p class="user">
-           <a class="button follow" href="#" title="Follow">
-          Buy <%= @bird.price %>
-        </a>
+          <% if @bird.user == current_user %>
+           <%= link_to "Edit #{@bird.name}", edit_bird_path, class: "button follow" %>
+           <% else %>
+           <%= link_to "Rent #{@bird.name}", "#", class: "button follow" %>
+           <!-- Add NEW RENTALS PATH -->
+        <% end  %>
+
           <img class="avatar-32" src="http://jlantunez.com/imgs/avatar.jpg" alt="Avatar">
           <strong>
           <a title="Full Name" href="#">
