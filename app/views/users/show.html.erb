@@ -1,16 +1,26 @@
-<h1>User#show</h1>
-<%= @user.name %>
-<%= @user.email %>
-</br>
-<!-- Make a list of birds appear here -->
-<ul>
-  <% @user.birds_for_rent.each do |bird| %>
-    <li>
-      <%= bird.name %>
-      <%= bird.location %>
-      <%= bird.price %>
-      <%= link_to "link", bird %>
-    </li>
-  <% end %>
-</ul>
-<%= link_to "Back to Main", root_path  %>
+
+<div class="container">
+  <div class="dashboard-container">
+    <div>
+      <h1>Welcome, <%= @user.name %> </h1>
+      <h3><%= @user.email %></h3>
+    </div>
+
+    </br>
+
+    <!-- Make a list of birds appear here -->
+    <div class="dashboard-birds">
+      <div class="box-birds">
+        <span>This is your birds, rent them!</span>
+
+      </div>
+
+      <div class="box-birds">
+        <span>This is your transaction history!</span>
+
+      </div>
+    </div>
+  </div>
+
+  <%= link_to "Back to Main", root_path  %>
+</div>
