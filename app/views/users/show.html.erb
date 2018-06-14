@@ -1,16 +1,18 @@
-<h1>User#show</h1>
-<%= @user.name %>
-<%= @user.email %>
-</br>
-<!-- Make a list of birds appear here -->
-<ul>
-  <% @user.birds_for_rent.each do |bird| %>
-    <li>
-      <%= bird.name %>
-      <%= bird.location %>
-      <%= bird.price %>
-      <%= link_to "link", bird %>
-    </li>
-  <% end %>
-</ul>
-<%= link_to "Back to Main", root_path  %>
+<main class="container">
+
+  <div class="row">
+    <h2><%= @user.name %></h2>
+  </div>
+
+  <div class="row">
+    <h3>Birds for rent:</h3>
+    <% @user.birds_for_rent.each do |bird| %>
+      <%= render partial: 'shared/bird-card', locals: {bird: bird} %>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <%= link_to "Back to Main", root_path  %>
+  </div>
+
+</main>
