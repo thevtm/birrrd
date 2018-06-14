@@ -1,15 +1,6 @@
-<!-- <h1>You can see the index of all our birds!!</h1>
-
-<h2>Geocode should be on the right side</h2> -->
-
-
-
 <!--
 link_to(body, url, html_options = {})
 link_to -->
-
-
-
 
 <div class="container">
   <div class="row">
@@ -35,3 +26,10 @@ link_to -->
     <% end %>
   </div>
 </div>
+
+<div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+></div>
