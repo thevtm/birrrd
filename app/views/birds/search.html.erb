@@ -1,6 +1,6 @@
 
 
 
-<% @results.each do |result| %>
-<h1><%= result.name %></h1>
+<% @results.each do |bird| %>
+<%= render 'shared/bird-card', bird: bird  %>
 <% end %>
