@@ -1,0 +1,21 @@
+
+.dashboard-birds {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.box-birds {
+  display: flex;
+  // flex-direction: column;
+  border: 1px solid pink;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 10px;
+  padding: 10px 30px 30px 30px;
+}
+
+#dashboard-description {
+  margin: 0px;
+}

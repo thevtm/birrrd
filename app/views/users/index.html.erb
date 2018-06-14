@@ -1,0 +1,38 @@
+
+<div class="container">
+  <div class="dashboard-container">
+    <div>
+      <h1>Welcome, <%= @user.name %> </h1>
+      <p id="dashboard-description">You can see how many birds you own and which birds you have rented</p>
+    </div>
+
+    </br>
+
+    <!-- Make a list of birds appear here -->
+    <div class="dashboard-birds">
+      <div class="box-birds">
+        <div class="box-birds-title">
+          <h3>Birds you own</h3>
+        </div>
+        <div>
+          <% @user.birds_for_rent.each do |bird| %>
+            <%= render partial: 'shared/bird-card', locals: {bird: bird} %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="box-birds">
+        <div class="box-birds-title">
+          <h3>Birds you have rented</h3>
+        </div>
+        <div>
+          <% @user.birds_renting.each do |bird| %>
+            <%= render partial: 'shared/bird-card', locals: {bird: bird} %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%= link_to "Back to Main", root_path, class: "btn btn-primary btn-md" %>
+</div>
