@@ -6,4 +6,11 @@ class Bird < ApplicationRecord
   validates :name, presence: true
   validates :location, presence: true
   validates :price, presence: true
+
+  include PgSearch
+  pg_search_scope :search_by_name,
+    against: [ :name ],
+    using: {
+      tsearch: { prefix: true }
+    }
 end
