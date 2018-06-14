@@ -1,0 +1,15 @@
+// @import "home";
+// @import "dashboard";
+
+.dashboard-birds {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.box-birds {
+  border: 1px solid pink;
+}
+// .box-birds {
+//   width: 300px;
+// }
