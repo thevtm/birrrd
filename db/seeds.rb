@@ -20,7 +20,8 @@ end
     user: User.all.sample,
     name: Faker::Dog.name,
     location: Faker::StarWars.planet,
-    price: Faker::Number.between(1, 100)
+    price: Faker::Number.between(1, 100),
+    description: Faker::Lorem.paragraph(7, true, 2)
   )
 end
 
@@ -54,12 +55,13 @@ test_bird_a = Bird.create!(
   name: "Test Bird A",
   location: "Havana Cuba",
   price: 1,
+  description: Faker::Lorem.paragraph(7, true, 2)
 )
 
 Rental.create!(
   user: test_user_b,
   bird: test_bird_a,
-  start_date: Date.new(2010, 1, 1),
-  end_date: Date.new(2010, 2, 1),
+  start_date: Date.new(2018, 6, 1),
+  end_date: Date.new(2018, 7, 1),
   status: 0
 )
