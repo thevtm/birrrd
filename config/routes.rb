@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  get "/users/myprofile", to: "users#my_profile"
+
   resources :users, only: [:index, :show]
 
   resources :birds, only: [:index, :new, :create, :show, :edit, :update] do

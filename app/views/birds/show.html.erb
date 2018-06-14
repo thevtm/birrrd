@@ -2,7 +2,9 @@
 <main role="main">
   <article class="card-60 social">
     <figure>
-      <img src="http://www.dogbazar.org/wp-content/uploads/2017/04/Chattering-lory.jpg" alt="parrot">
+      <!-- <img src="http://www.dogbazar.org/wp-content/uploads/2017/04/Chattering-lory.jpg" alt="parrot"> -->
+      <%= cl_image_tag @bird.photo, height: 300, width: 400, crop: :fill %>
+
     </figure>
     <!-- end figure-->
     <div class="flex-content">
@@ -13,6 +15,7 @@
            <% else %>
            <%= link_to "Rent #{@bird.name}", new_bird_rental_path(@bird), class: "button follow" %>
            <!-- Add NEW RENTALS PATH -->
+
         <% end  %>
 
           <img class="avatar-32" src="http://jlantunez.com/imgs/avatar.jpg" alt="Avatar">
