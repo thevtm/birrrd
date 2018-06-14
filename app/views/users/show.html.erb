@@ -15,7 +15,7 @@
           <h3>Birds you own</h3>
         </div>
         <div>
-          <% @birds.each do |bird| %>
+          <% @user.birds_for_rent.each do |bird| %>
             <%= render partial: 'shared/bird-card', locals: {bird: bird} %>
           <% end %>
         </div>
@@ -26,7 +26,7 @@
           <h3>Birds you have rented</h3>
         </div>
         <div>
-          <% @birds.each do |bird| %>
+          <% @user.birds_renting.each do |bird| %>
             <%= render partial: 'shared/bird-card', locals: {bird: bird} %>
           <% end %>
         </div>
