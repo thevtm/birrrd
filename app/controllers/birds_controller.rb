@@ -34,6 +34,11 @@ class BirdsController < ApplicationController
     end
   end
 
+  def search
+    @user_search = params[:user_search]
+    @results = Bird.search_by_name(@user_search)
+  end
+
   private
 
   def bird_params
