@@ -8,10 +8,13 @@ class Bird < ApplicationRecord
   validates :price, presence: true
   validates :description, presence: true, length: { minimum: 140, maximum: 800 }
 
+  mount_uploader :photo, PhotoUploader
+
   include PgSearch
   pg_search_scope :search_by_name,
     against: [ :name ],
     using: {
       tsearch: { prefix: true }
     }
+
 end
