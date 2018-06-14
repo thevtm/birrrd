@@ -6,6 +6,7 @@ class Bird < ApplicationRecord
   validates :name, presence: true
   validates :location, presence: true
   validates :price, presence: true
+  validates :description, presence: true, length: { minimum: 140, maximum: 800 }
 
   include PgSearch
   pg_search_scope :search_by_name,
