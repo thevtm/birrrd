@@ -3,7 +3,7 @@
   <div class="dashboard-container">
     <div>
       <h1>Welcome, <%= @user.name %> </h1>
-      <h3><%= @user.email %></h3>
+      <p id="dashboard-description">You can see how many birds you own and which birds you have rented</p>
     </div>
 
     </br>
@@ -11,16 +11,28 @@
     <!-- Make a list of birds appear here -->
     <div class="dashboard-birds">
       <div class="box-birds">
-        <span>This is your birds, rent them!</span>
-
+        <div class="box-birds-title">
+          <h3>Birds you own</h3>
+        </div>
+        <div>
+          <% @birds.each do |bird| %>
+            <%= render partial: 'shared/bird-card', locals: {bird: bird} %>
+          <% end %>
+        </div>
       </div>
 
       <div class="box-birds">
-        <span>This is your transaction history!</span>
-
+        <div class="box-birds-title">
+          <h3>Birds you have rented</h3>
+        </div>
+        <div>
+          <% @birds.each do |bird| %>
+            <%= render partial: 'shared/bird-card', locals: {bird: bird} %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
 
-  <%= link_to "Back to Main", root_path  %>
+  <%= link_to "Back to Main", root_path, class: "btn btn-primary btn-md" %>
 </div>
