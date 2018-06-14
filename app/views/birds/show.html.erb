@@ -4,7 +4,6 @@
     <figure>
       <!-- <img src="http://www.dogbazar.org/wp-content/uploads/2017/04/Chattering-lory.jpg" alt="parrot"> -->
       <%= cl_image_tag @bird.photo, height: 300, width: 400, crop: :fill %>
-
     </figure>
     <!-- end figure-->
     <div class="flex-content">
@@ -23,22 +22,25 @@
             Blackbeard
           </a>
         </strong>
-          <span>8 mins ago &middot; @bird.location</span>
+          <span>8 mins ago &middot; </span>
         </p>
       </header>
       <h2>
       <%= @bird.name %>
     </h2>
-      <p>
-        Parrots, also known as psittacines, are birds of the roughly 393 species in 92 genera that make up the order Psittaciformes, found in most tropical and subtropical regions.
+        <p>
+        <%= @bird.description %>
       </p>
       <ul>
         <li>
-          <strong title="Type">Type:</strong>
-          Parrot
+          <strong title="Price">Price:</strong>
+          $ <%= @bird.price %>
         </li>
-        <li><strong title="availability">Color:</strong> Red/Orange/Black/Blue</li>
-        <li><strong title="Shipping">Shipping:</strong> Free</li>
+        <li>
+          <strong title="location">Location:</strong>
+          <%= @bird.location %>
+        </li>
+        <li><strong title="Shipping">Shipping:</strong> Free - it flies you moron!</li>
       </ul>
       <footer>
         <p>
