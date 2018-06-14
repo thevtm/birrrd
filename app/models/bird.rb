@@ -6,9 +6,15 @@ class Bird < ApplicationRecord
   validates :name, presence: true
   validates :location, presence: true
   validates :price, presence: true
+  validates :description, presence: true, length: { minimum: 140, maximum: 800 }
 
   mount_uploader :photo, PhotoUploader
 
-  # geocoded_by :location
-  # after_validation :geocode, if: :will_save_change_to_location?
+  include PgSearch
+  pg_search_scope :search_by_name,
+    against: [ :name ],
+    using: {
+      tsearch: { prefix: true }
+    }
+
 end
