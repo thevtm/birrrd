@@ -34,3 +34,32 @@ end
   )
 end
 
+# Test Users
+test_user_a = User.create!(
+  name: "Test A",
+  email: "a@a.a",
+  password: "111111",
+  password_confirmation: "111111"
+)
+
+test_user_b = User.create!(
+  name: "Test B",
+  email: "b@b.b",
+  password: "111111",
+  password_confirmation: "111111"
+)
+
+test_bird_a = Bird.create!(
+  user: test_user_a,
+  name: "Test Bird A",
+  location: "Havana Cuba",
+  price: 1,
+)
+
+Rental.create!(
+  user: test_user_b,
+  bird: test_bird_a,
+  start_date: Date.new(2010, 1, 1),
+  end_date: Date.new(2010, 2, 1),
+  status: 0
+)
