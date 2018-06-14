@@ -1,5 +1,9 @@
 class BirdsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
+  def index
+    @birds = Bird.all
+  end
 
   def show
     @bird = Bird.find(params[:id])
@@ -7,6 +11,17 @@ class BirdsController < ApplicationController
 
   def new
     @bird = Bird.new
+  end
+
+  def edit
+    @user = current_user
+    @bird = Bird.find(params[:id])
+  end
+
+  def update
+    @bird = Bird.find(params[:id])
+    @bird.update(bird_params)
+    redirect_to bird_path(@bird)
   end
 
   def create

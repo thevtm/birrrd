@@ -5,9 +5,11 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
 
-  resources :birds, only: [:index, :new, :create, :show] do
+
+  resources :birds, only: [:index, :new, :create, :show, :edit, :update] do
     get "search", on: :collection
   end
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
