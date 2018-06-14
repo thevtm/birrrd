@@ -1,0 +1,9 @@
+<div>
+  <h1>Post your bird!</h1>
+  <%= simple_form_for [@user, @bird] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :location %>
+    <%= f.input :price %>
+    <%= f.button :submit, class: 'btn btn-primary' %>
+  <% end %>
+</div>
