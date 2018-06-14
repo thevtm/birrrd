@@ -22,9 +22,8 @@ ActiveRecord::Schema.define(version: 2018_06_14_150900) do
     t.float "price"
     t.float "latitude"
     t.float "longitude"
-    t.text "description"
     t.string "photo"
-    
+    t.text "description"
     t.index ["user_id"], name: "index_birds_on_user_id"
   end
 

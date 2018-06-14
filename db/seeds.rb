@@ -19,7 +19,7 @@ end
   Bird.create!(
     user: User.all.sample,
     name: Faker::Dog.name,
-    location: Faker::Nation.capital_city,
+    location: Faker::Address.country,
     price: Faker::Number.between(1, 100),
     description: Faker::Lorem.paragraph(7, true, 2)
   )
