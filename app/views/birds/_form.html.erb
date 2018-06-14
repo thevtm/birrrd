@@ -1,6 +1,6 @@
 <div>
   <h1>Post your bird!</h1>
-  <%= simple_form_for [@user, @bird] do |f| %>
+  <%= simple_form_for @bird do |f| %>
     <%= f.input :name %>
     <%= f.input :location %>
     <%= f.input :price %>
