@@ -19,10 +19,16 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'geocoder'
 
+gem "devise", "~> 4.4"
+gem 'cloudinary'
+gem 'carrierwave', '~> 1.2'
+gem "rails_real_favicon", "~> 0.0.11"
+
 group :development do
   gem 'web-console', '>= 3.3.0'
   gem "better_errors"
   gem "binding_of_caller"
+  gem "faker", "~> 1.8"
 end
 
 group :development, :test do
@@ -32,15 +38,3 @@ group :development, :test do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
-
-# Added at 2018-06-11 14:56:19 +0200 by vtm:
-gem "devise", "~> 4.4"
-
-# Added at 2018-06-12 11:34:25 +0200 by David:
-gem "faker", "~> 1.8"
-
-gem 'cloudinary'
-gem 'carrierwave', '~> 1.2'
-
-# Added at 2018-06-15 12:47:23 +0200 by vtm:
-gem "rails_real_favicon", "~> 0.0.11"
