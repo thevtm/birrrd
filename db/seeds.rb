@@ -12,7 +12,7 @@ User.delete_all
   )
 end
 
-10.times do
+100.times do
   bird = Bird.new(
     user: User.all.sample,
     name: Faker::Dog.name,
@@ -25,7 +25,7 @@ end
   bird.save!
 end
 
-10.times do
+20.times do
   Rental.create!(
     user: User.all.sample,
     bird: Bird.all.sample,

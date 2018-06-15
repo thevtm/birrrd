@@ -2,16 +2,7 @@ class BirdsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @birds = Bird.where.not(latitude: nil, longitude: nil)
-
-
-    @markers = @birds.map do |bird|
-      {
-        lat: bird.latitude,
-        lng: bird.longitude#,
-        # infoWindow: { content: render_to_string(partial: "/birds/map_box", locals: { bird: bird }) }
-      }
-    end
+    @birds = Bird.all
   end
 
   def show
@@ -54,8 +45,18 @@ class BirdsController < ApplicationController
   end
 
   def search
-    @user_search = params[:user_search]
-    @results = Bird.search_by_name(@user_search)
+    # @birds = Bird.where(latitude: nil, longitude: nil)
+
+    # @markers = @birds.map do |bird|
+    #   {
+    #     lat: bird.latitude,
+    #     lng: bird.longitude#,
+    #     # infoWindow: { content: render_to_string(partial: "/birds/map_box", locals: { bird: bird }) }
+    #   }
+    # end
+
+    @user_query = params[:user_search]
+    @results = Bird.near(@user_query, 500)
   end
 
   private
