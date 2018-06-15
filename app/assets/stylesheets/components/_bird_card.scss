@@ -1,0 +1,41 @@
+.bird-card {
+  height: 300px;
+  min-width: 200px;
+  background-size: cover !important;
+  background-position: center;
+  margin: 15px 10px;
+}
+
+.bird-card__image {
+  height: 70%;
+  width: 100%;
+}
+
+.bird-card__description {
+  min-width: 200px;
+  height: 30%; // top: 150px;
+}
+
+.bird-card__name {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  color: black;
+  font-size: 2em;
+}
+
+.bird-card__price {
+  font-size: 18px;
+  color: black;
+  opacity: 0.7;
+  font-weight: lighter;
+}
+
+.bird-card__link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}

@@ -1,23 +1,9 @@
-<div class="container" style="position: relative;">
+<div class="container">
+
   <div class="row">
     <% @birds.each do |bird| %>
-    <div class="col-xs-12 col-sm-4 col-md-4">
-      <%= link_to bird_path(bird) do %>
-      <div class="bird-card">
-        <div class="card-image" role="img" aria-label="Parrot for a pirate" style="background-image: url(<%= cl_image_tag bird.photo %>);">
-        </div>
-        <div class="card-description">
-          <div class="bird-name">
-            <h2><%= bird.name %></h2>
-          </div>
-          <div class="bird-info">
-            <p>Price of $<%= bird.price %></p>
-            <p>Location: <%= bird.location %></p>
-          </div>
-        </div>
-      </div>
-      <% end %>
-    </div>
+      <%= render 'shared/bird-card', bird: bird %>
     <% end %>
   </div>
+
 </div>

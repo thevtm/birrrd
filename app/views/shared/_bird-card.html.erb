@@ -1,18 +1,23 @@
 <div class="col-xs-12 col-sm-4 col-md-4">
   <%= link_to bird_path(bird) do %>
-  <div class="bird-card">
-    <div class="card-image" role="img" aria-label="Parrot for a pirate" style="background-image: url('https://images.fineartamerica.com/images-medium-large-5/red-lored-amazon-parrot-teresa-zieba.jpg');">
-      <%#= cl_image_tag bird.photo %> <!-- add this once each bird has a picture -->
-    </div>
-    <div class="card-description">
-      <div class="bird-name">
-        <h2><%= bird.name %></h2>
+
+    <div class="bird-card">
+
+      <picture class="bird-card__image" role="img" aria-label="Parrot for a pirate">
+        <%= cl_image_tag bird.photo %>
+      </picture>
+
+      <div class="bird-card__container">
+        <div class="flex justify-between items-end">
+          <div class="flex flex-column">
+            <span class="bird-card__name"><%= bird.name %></span>
+            <span class="bird-card__location"><%= bird.location %></span>
+          </div>
+          <span class="bird-card__price">$ <%= bird.price %></span>
+        </div>
       </div>
-      <div class="bird-info">
-        <span>Price of $<%= bird.price %></span>
-        <span>Location: <%= bird.location %></span>
-      </div>
+
     </div>
-  </div>
+
   <% end %>
 </div>
