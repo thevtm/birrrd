@@ -2,7 +2,7 @@
 link_to(body, url, html_options = {})
 link_to -->
 
-<div class="container">
+<div class="container" style="position: relative;">
   <div class="row">
     <% @birds.each do |bird| %>
     <div class="col-xs-12 col-sm-4 col-md-4">
@@ -29,7 +29,9 @@ link_to -->
 
 <div
   id="map"
-  style="width: 100%;
+  style="width: 30%;
+  position: absolute;
+  right: 0;
   height: 600px;"
   data-markers="<%= @markers.to_json %>"
 ></div>
