@@ -30,8 +30,7 @@ end
     user: User.all.sample,
     bird: Bird.all.sample,
     start_date: Date.new(2010, 1, 1),
-    end_date: Date.new(2010, 2, 1),
-    status: 0
+    end_date: Date.new(2010, 2, 1)
   )
 end
 
@@ -73,6 +72,5 @@ Rental.create!(
   user: test_user_b,
   bird: test_bird_a,
   start_date: Date.new(2018, 6, 1),
-  end_date: Date.new(2018, 7, 1),
-  status: 0
+  end_date: Date.new(2018, 7, 1)
 )
