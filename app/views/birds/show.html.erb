@@ -11,11 +11,14 @@
         <p class="user">
           <% if @bird.user == current_user %>
            <%= link_to "Edit #{@bird.name}", edit_bird_path, class: "button follow" %>
-           <% else %>
+          <% else %>
            <%= link_to "Rent #{@bird.name}", new_bird_rental_path(@bird), class: "button follow" %>
            <!-- Add NEW RENTALS PATH -->
-
         <% end  %>
+
+          <% if @bird.user == current_user %>
+           <%= link_to "Delete #{@bird.name}", bird_path(@bird), class: "button follow", method: :delete %>
+          <% end %>
 
           <img class="avatar-32" src="http://jlantunez.com/imgs/avatar.jpg" alt="Avatar">
           <strong>
@@ -25,23 +28,25 @@
         </strong>
         <span>8 mins ago &middot; <%= @bird.location %> </span>
         </p>
+<!--         <p class="user">
+          <% if @bird.user == current_user %>
+           <%= link_to "Delete #{@bird.name}", bird_path(@bird), class: "button follow", method: :delete %>
+          <% end %> -->
+        </p>
+
       </header>
       <h2>
       <%= @bird.name %>
     </h2>
-        <p>
+      <p>
         <%= @bird.description %>
       </p>
       <ul>
         <li>
           <strong title="Price">Price:</strong>
-          $ <%= @bird.price %>
+          <%= @bird.price %>
         </li>
-        <li>
-          <strong title="location">Location:</strong>
-          <%= @bird.location %>
-        </li>
-        <li><strong title="Shipping">Shipping:</strong> Free - it flies you moron!</li>
+        <li><strong title="Location">Location:</strong> <%= @bird.location %> </li>
       </ul>
       <footer>
         <p>
