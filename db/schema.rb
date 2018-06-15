@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 2018_06_15_093409) do
+=======
 ActiveRecord::Schema.define(version: 2018_06_15_085525) do
+>>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,7 +36,6 @@ ActiveRecord::Schema.define(version: 2018_06_15_085525) do
     t.bigint "bird_id"
     t.date "start_date"
     t.date "end_date"
-    t.integer "status"
     t.index ["bird_id"], name: "index_rentals_on_bird_id"
     t.index ["user_id"], name: "index_rentals_on_user_id"
   end
