@@ -1,9 +1,11 @@
 
 
 <div class="col-xs-12 col-sm-4 col-md-4">
-<%= simple_form_for [@bird, @rental] do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.submit "add a rental", class: "btn btn-primary" %>
-<% end %>
+  <h1>Rent your companion, matey!</h1>
+  <p>Aye, pick from a wide range of birds, whatever your needs: looting, hunting, stealing the enemy treasure and more!</p>
+  <%= simple_form_for [@bird, @rental] do |f| %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.submit "add a rental", class: "btn btn-primary" %>
+  <% end %>
 </div>
