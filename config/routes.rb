@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show]
 
-  resources :birds, only: [:index, :new, :create, :show, :edit, :update] do
+  resources :birds, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
     get "search", on: :collection
     resources :rentals, only: [:new, :create]
   end
