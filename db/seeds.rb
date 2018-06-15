@@ -38,6 +38,15 @@ end
   )
 end
 
+40.times do
+  Review.create!(
+    user: User.all.sample,
+    bird: Bird.all.sample,
+    title: Faker::Lorem.sentence(3),
+    content: Faker::Lorem.paragraph(5, true, 2)
+  )
+end
+
 # Test Users
 test_user_a = User.create!(
   name: "Test A",
