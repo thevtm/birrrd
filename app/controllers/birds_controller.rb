@@ -24,12 +24,15 @@ class BirdsController < ApplicationController
   def edit
     @user = current_user
     @bird = Bird.find(params[:id])
+    if @user != @bird.user
+      redirect_to bird_path(@bird)
+    end
   end
 
   def update
     @bird = Bird.find(params[:id])
-    @bird.update(bird_params)
-    redirect_to bird_path(@bird)
+      @bird.update(bird_params)
+      redirect_to bird_path(@bird)
   end
 
   def create
@@ -42,9 +45,15 @@ class BirdsController < ApplicationController
     end
   end
 
+  def search
+    @user_search = params[:user_search]
+    @results = Bird.search_by_name(@user_search)
+  end
+
   private
 
   def bird_params
-    params.require(:bird).permit(:name, :location, :price)
+    params.require(:bird).permit(:name, :location, :price, :photo)
   end
+
 end

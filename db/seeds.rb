@@ -19,8 +19,9 @@ end
   Bird.create!(
     user: User.all.sample,
     name: Faker::Dog.name,
-    location: Faker::StarWars.planet,
-    price: Faker::Number.between(1, 100)
+    location: Faker::Address.country,
+    price: Faker::Number.between(1, 100),
+    description: Faker::Lorem.paragraph(7, true, 2)
   )
 end
 
@@ -34,3 +35,33 @@ end
   )
 end
 
+# Test Users
+test_user_a = User.create!(
+  name: "Test A",
+  email: "a@a.a",
+  password: "111111",
+  password_confirmation: "111111"
+)
+
+test_user_b = User.create!(
+  name: "Test B",
+  email: "b@b.b",
+  password: "111111",
+  password_confirmation: "111111"
+)
+
+test_bird_a = Bird.create!(
+  user: test_user_a,
+  name: "Test Bird A",
+  location: "Havana Cuba",
+  price: 1,
+  description: Faker::Lorem.paragraph(7, true, 2)
+)
+
+Rental.create!(
+  user: test_user_b,
+  bird: test_bird_a,
+  start_date: Date.new(2018, 6, 1),
+  end_date: Date.new(2018, 7, 1),
+  status: 0
+)

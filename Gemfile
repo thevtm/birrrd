@@ -8,6 +8,7 @@ gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.2.0'
 gem 'redis'
+gem 'pg_search'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
@@ -37,3 +38,6 @@ gem "devise", "~> 4.4"
 
 # Added at 2018-06-12 11:34:25 +0200 by David:
 gem "faker", "~> 1.8"
+
+gem 'cloudinary'
+gem 'carrierwave', '~> 1.2'

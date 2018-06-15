@@ -2,7 +2,12 @@
 <main role="main">
   <article class="card-60 social">
     <figure>
-      <img src="http://www.dogbazar.org/wp-content/uploads/2017/04/Chattering-lory.jpg" alt="parrot">
+      <!-- <img src="http://www.dogbazar.org/wp-content/uploads/2017/04/Chattering-lory.jpg" alt="parrot"> -->
+
+      <!-- Uncomment the following lines when I figured the error -->
+
+    <%= cl_image_tag @bird.photo, height: 300, width: 400, crop: :fill %>
+
     </figure>
     <!-- end figure-->
     <div class="flex-content">
@@ -12,7 +17,7 @@
            <%= link_to "Edit #{@bird.name}", edit_bird_path, class: "button follow" %>
            <% else %>
            <%= link_to "Rent #{@bird.name}", "#", class: "button follow" %>
-           <!-- Add NEW RENTALS PATH -->
+           <!-- Add NEW RENTALS PATH and add the price of the bird (before it was inside the button) -->
         <% end  %>
 
           <img class="avatar-32" src="http://jlantunez.com/imgs/avatar.jpg" alt="Avatar">
