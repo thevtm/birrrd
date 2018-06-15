@@ -4,7 +4,6 @@
     <figure>
       <!-- <img src="http://www.dogbazar.org/wp-content/uploads/2017/04/Chattering-lory.jpg" alt="parrot"> -->
       <%= cl_image_tag @bird.photo, height: 300, width: 400, crop: :fill %>
-
     </figure>
     <!-- end figure-->
     <div class="flex-content">
@@ -26,8 +25,8 @@
           <a title="Full Name" href="#">
             Blackbeard
           </a>
-          </strong>
-          <span> 8 mins ago &middot; </span>
+        </strong>
+        <span>8 mins ago &middot; <%= @bird.location %> </span>
         </p>
 <!--         <p class="user">
           <% if @bird.user == current_user %>
@@ -48,7 +47,6 @@
           <%= @bird.price %>
         </li>
         <li><strong title="Location">Location:</strong> <%= @bird.location %> </li>
-        <!-- <li><strong title="Shipping">Shipping:</strong> Free</li> -->
       </ul>
       <footer>
         <p>
