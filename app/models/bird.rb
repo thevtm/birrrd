@@ -1,6 +1,7 @@
 class Bird < ApplicationRecord
   belongs_to :user
   has_many :rentals
+  has_many :reviews
 
   validates :user, presence: true
   validates :name, presence: true
