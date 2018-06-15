@@ -1,0 +1,15 @@
+<div class="container">
+
+  <div class="row">
+    <h2>New review for <%= @bird.name %></h2>
+  </div>
+
+  <div class="row">
+    <%= simple_form_for [@bird, @review] do |f| %>
+      <%= f.input :title %>
+      <%= f.input :content %>
+      <%= f.button :submit, class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+
+</div>
