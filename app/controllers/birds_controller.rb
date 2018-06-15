@@ -45,6 +45,13 @@ class BirdsController < ApplicationController
     end
   end
 
+  def destroy
+    @bird = Bird.find(params[:id])
+    @bird.destroy
+    redirect_to birds_path(@birds)
+    # ideally this would first take you to a form that says "sure you wanna delete the bird?" and after deleting, lead to your dashbord.
+  end
+
   def search
     @user_search = params[:user_search]
     @results = Bird.search_by_name(@user_search)
@@ -53,7 +60,7 @@ class BirdsController < ApplicationController
   private
 
   def bird_params
-    params.require(:bird).permit(:name, :location, :price, :photo)
+    params.require(:bird).permit(:name, :location, :price, :description, :photo)
   end
 
 end

@@ -41,3 +41,6 @@ gem "faker", "~> 1.8"
 
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
+
+# Added at 2018-06-15 12:47:23 +0200 by vtm:
+gem "rails_real_favicon", "~> 0.0.11"

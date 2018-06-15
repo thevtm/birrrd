@@ -8,8 +8,7 @@ link_to -->
     <div class="col-xs-12 col-sm-4 col-md-4">
       <%= link_to bird_path(bird) do %>
       <div class="bird-card">
-        <div class="card-image" role="img" aria-label="Parrot for a pirate" style="background-image: url('https://images.fineartamerica.com/images-medium-large-5/red-lored-amazon-parrot-teresa-zieba.jpg');">
-          <%= cl_image_tag bird.photo %> <!-- add this once each bird has a picture -->
+        <div class="card-image" role="img" aria-label="Parrot for a pirate" style="background-image: url(<%= cl_image_tag bird.photo %>);">
         </div>
         <div class="card-description">
           <div class="bird-name">
