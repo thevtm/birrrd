@@ -2,3 +2,12 @@
 @import "home";
 @import "show";
 @import "dashboard";
+
+#map{
+  width: 30%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+}
+

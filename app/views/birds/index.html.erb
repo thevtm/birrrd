@@ -1,4 +1,6 @@
-<div class="container">
+<div style="display: flex; height: 100%;">
+
+  <div class="container">
 
   <div class="row">
     <% @birds.each do |bird| %>
@@ -6,4 +8,11 @@
     <% end %>
   </div>
 
+  </div>
+
+  <div id="map" data-markers="<%= @markers.to_json %>"></div>
 </div>
+
+
+
+
