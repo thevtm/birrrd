@@ -1,8 +1,9 @@
 
 
-
+<div class="col-xs-12 col-sm-4 col-md-4">
 <%= simple_form_for [@bird, @rental] do |f| %>
   <%= f.input :start_date %>
   <%= f.input :end_date %>
   <%= f.submit "add a rental", class: "btn btn-primary" %>
 <% end %>
+</div>
