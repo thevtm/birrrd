@@ -45,8 +45,8 @@
         </div>
       </div>
     <% else %>
-      <%= link_to "Explore birds", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Sign up", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Explore birds", birds_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Sign up", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <!-- Login link (when logged out) -->
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
