@@ -26,12 +26,7 @@
             Blackbeard
           </a>
         </strong>
-        <span>8 mins ago &middot; <%= @bird.location %> </span>
-        </p>
-<!--         <p class="user">
-          <% if @bird.user == current_user %>
-           <%= link_to "Delete #{@bird.name}", bird_path(@bird), class: "button follow", method: :delete %>
-          <% end %> -->
+        <span>8 mins ago &middot; </span>
         </p>
 
       </header>
@@ -44,7 +39,7 @@
       <ul>
         <li>
           <strong title="Price">Price:</strong>
-          <%= @bird.price %>
+          <%= @bird.price %> pirate dollars
         </li>
         <li><strong title="Location">Location:</strong> <%= @bird.location %> </li>
       </ul>
