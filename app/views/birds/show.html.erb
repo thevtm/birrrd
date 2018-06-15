@@ -52,5 +52,23 @@
     </div>
 
   </article>
+
+  <div class="row ph4">
+
+    <div class="mr5 flex justify-between items-center">
+      <h2>Reviews</h2>
+      <%= link_to "Post a review", new_bird_review_path(@bird) %>
+    </div>
+
+    <% @bird.reviews.each do |review| %>
+
+    <div class="ph3">
+      <h4><%= review.title %></h4>
+      <p><%= review.content %></p>
+    </div>
+
+    <% end %>
+
+  </div>
 </div>
 
