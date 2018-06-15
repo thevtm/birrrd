@@ -23,12 +23,12 @@ gem "devise", "~> 4.4"
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 gem "rails_real_favicon", "~> 0.0.11"
+gem "faker", "~> 1.8"
 
 group :development do
   gem 'web-console', '>= 3.3.0'
   gem "better_errors"
   gem "binding_of_caller"
-  gem "faker", "~> 1.8"
 end
 
 group :development, :test do
