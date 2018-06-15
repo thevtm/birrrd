@@ -2,7 +2,15 @@ class BirdsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @birds = Bird.all
+    @birds = Bird.where.not(latitude: nil, longitude: nil)
+
+    @markers = @birds.map do |bird|
+      {
+        lat: bird.latitude,
+        lng: bird.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/birds/map_box", locals: { bird: bird }) }
+      }
+    end
   end
 
   def show

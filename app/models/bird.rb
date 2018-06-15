@@ -8,7 +8,9 @@ class Bird < ApplicationRecord
   validates :price, presence: true
   validates :description, presence: true, length: { minimum: 140, maximum: 800 }
 
-  mount_uploader :photo, PhotoUploader
+  # Uncomment the below lines when I figure out the error
+
+  # mount_uploader :photo, PhotoUploader
 
   include PgSearch
   pg_search_scope :search_by_name,
@@ -16,5 +18,9 @@ class Bird < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+
+
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
 
 end

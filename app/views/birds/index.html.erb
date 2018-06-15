@@ -1,17 +1,8 @@
-<!-- <h1>You can see the index of all our birds!!</h1>
-
-<h2>Geocode should be on the right side</h2> -->
-
-
-
 <!--
 link_to(body, url, html_options = {})
 link_to -->
 
-
-
-
-<div class="container">
+<div class="container" style="position: relative;">
   <div class="row">
     <% @birds.each do |bird| %>
     <div class="col-xs-12 col-sm-4 col-md-4">
@@ -34,3 +25,12 @@ link_to -->
     <% end %>
   </div>
 </div>
+
+<div
+  id="map"
+  style="width: 30%;
+  position: absolute;
+  right: 0;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+></div>
