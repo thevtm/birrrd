@@ -15,10 +15,9 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "My birds", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Rent bird", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Post bird", "birds/new", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Rent a bird!", birds_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Post your bird!", "birds/new", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Dashboard", users_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
@@ -50,8 +49,6 @@
       <%= link_to "Sign up", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <!-- Login link (when logged out) -->
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-
-
     <% end %>
 
   </div>
