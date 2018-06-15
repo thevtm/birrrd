@@ -15,14 +15,17 @@
   )
 end
 
-30.times do
-  Bird.create!(
+40.times do
+  bird = Bird.new(
     user: User.all.sample,
     name: Faker::Dog.name,
     location: Faker::Address.country,
     price: Faker::Number.between(1, 100),
     description: Faker::Lorem.paragraph(7, true, 2)
   )
+
+  bird.remote_photo_url = "http://loremflickr.com/720/486/bird"
+  bird.save!
 end
 
 80.times do
@@ -50,13 +53,15 @@ test_user_b = User.create!(
   password_confirmation: "111111"
 )
 
-test_bird_a = Bird.create!(
+test_bird_a = Bird.new(
   user: test_user_a,
   name: "Test Bird A",
   location: "Havana Cuba",
   price: 1,
   description: Faker::Lorem.paragraph(7, true, 2)
 )
+test_bird_a.remote_photo_url = "http://loremflickr.com/720/486/bird"
+test_bird_a.save!
 
 Rental.create!(
   user: test_user_b,
